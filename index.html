@@ -37,8 +37,6 @@ document.getElementById("demo").innerHTML = days + "d "
         document.getElementById("demo").innerHTML = "EXPIRED";
     }
 }, 1000);
-</script>
-<script>
 async function downloadFile() {
     let response = await fetch("counter.txt");
     if(async (response.status() != 200)){

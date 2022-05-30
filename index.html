@@ -41,14 +41,14 @@ document.getElementById("demo").innerHTML = days + "d "
 <script>
 async function downloadFile() {
     let response = await fetch("counter.txt");
-    if(response.status != 200) {
+    if(async response.status != 200) {
     return "0";
     }
     let data = await response.text();
     return data;
 }
 
-let counter = await downloadFile();
+var counter = await downloadFile();
 
 const fs = require("fs")
 var num = paraseInt(counter) += 1;

@@ -11,6 +11,14 @@ p {
 body {
   background-color: rgb(75,150,245)
   }
+  #counter {
+text-align: center;
+font-size: 60px;
+font-family: 'Courier', monospace;
+}
+(to create an element)
+then in body put this after the <p id=demo thing:
+<p id="counter">test</p>
 </style>
 </head>
 <body>
@@ -42,7 +50,7 @@ async function downloadFile() {
     return data;
 }
 
-var counter = await downloadFile;
+var counter = await downloadFile();
 
 const fs = require("fs")
 var num = paraseInt(counter) += 1;

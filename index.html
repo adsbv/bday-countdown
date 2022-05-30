@@ -22,6 +22,7 @@ font-family: 'Courier', monospace;
 <body>
 <p id="demo"></p>
 <script>
+/* jshint esversion: 8 */
 var deadline = new Date("Jun 4, 2022 01:00:00").getTime();
 var x = setInterval(function() {
 var now = new Date().getTime();
@@ -30,8 +31,7 @@ var days = Math.floor(t / (1000 * 60 * 60 * 24));
 var hours = Math.floor((t%(1000 * 60 * 60 * 24))/(1000 * 60 * 60));
 var minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
 var seconds = Math.floor((t % (1000 * 60)) / 1000);
-document.getElementById("demo").innerHTML = days + "d " 
-+ hours + "h " + minutes + "m " + seconds + "s ";
+document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
     if (t < 0) {
         clearInterval(x);
         document.getElementById("demo").innerHTML = "EXPIRED";
@@ -48,17 +48,17 @@ async function downloadFile() {
   
   var counter = downloadFile();
 
-const fs = require("fs")
+const fs = require("fs");
 var num = paraseInt(counter) += 1;
 fs.writeFile('counter.txt', num, err => {
   if (err) {
-    console.error(err)
-    return
+    console.error(err);
+    return;
   }
- 
-var counte = document.getElementById("counter")
+});
+var counte = document.getElementById("counter");
 
-counte.textContent = counter
+counte.textContent = counter;
   </script>  
 </body>
 </html>

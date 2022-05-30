@@ -45,9 +45,10 @@ async function downloadFile() {
     return "0";
     }
     let data = await response.text();
-  var counter = await downloadFile();
     return data;
 }
+  
+  var counter = downloadFile();
 
 const fs = require("fs")
 var num = paraseInt(counter) += 1;

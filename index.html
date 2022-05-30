@@ -31,6 +31,28 @@ document.getElementById("demo").innerHTML = days + "d "
         document.getElementById("demo").innerHTML = "EXPIRED";
     }
 }, 1000);
+async function downloadFile() {
+    let response = await fetch("counter.txt");
+    if(response.status != 200) {
+    return "0";
+    }
+    let data = await response.text();
+    return data;
+}
+
+var counter = await downloadFile;
+
+const fs = require("fs")
+var num = paraseInt(counter) += 1;
+fs.writeFile('counter.txt', num, err => {
+  if (err) {
+    console.error(err)
+    return
+  }
+ 
+var counte = document.getElementById("counter")
+
+counte.textContent = counter
 </script>
   
 </body>

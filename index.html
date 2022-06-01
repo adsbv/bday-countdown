@@ -37,7 +37,7 @@ document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes
         document.getElementById("demo").innerHTML = "EXPIRED";
     }
 }, 1000);
-  var xhttp = new XMLHttpRequest();
+var xhttp = new XMLHttpRequest();
 const fs = require("fs");
 // Add a counter.txt file next to the html
 
@@ -48,16 +48,16 @@ const fs = require("fs");
     window.location.assign(file);
 
 
-console.log(counter)
+console.log(counter);
 var num = parseFloat(counter) + 1;
-console.log(num)
+console.log(num);
 
 fs.writeFile('counter.txt', num, err => {
   if (err) {
-    console.error(err)
-    return
+    console.error(err);
+    return;
   }
-  })
+  });
  
 var counte = document.getElementById("counter");
 
@@ -69,11 +69,11 @@ window.addEventListener('beforeunload', function(userfardedthesite){
   var num = parseInt(counter) =- 1;
 fs.writeFile('counter.txt', num, err => {
   if (err) {
-    console.error(err)
-    return
+    console.error(err);
+    return;
   }
-  })
-  }
+  });
+  };
 });
   </script>  
 </body>

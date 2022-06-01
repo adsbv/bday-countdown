@@ -37,6 +37,7 @@ document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes
         document.getElementById("demo").innerHTML = "EXPIRED";
     }
 }, 1000);
+  var xhttp = new XMLHttpRequest();
 const fs = require("fs");
 // Add a counter.txt file next to the html
 
@@ -59,7 +60,7 @@ fs.writeFile('counter.txt', num, err => {
   })
  
 var counte = document.getElementById("counter");
-var xhttp = new XMLHttpRequest();
+
 counte.textContent = counter;
 });
 window.addEventListener('beforeunload', function(userfardedthesite){

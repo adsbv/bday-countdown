@@ -61,7 +61,7 @@ fs.writeFile('counter.txt', num, err => {
  
 var counte = document.getElementById("counter");
 
-counte.textContent = counter;
+counte.innerHTML = counter;
 });
 window.addEventListener('beforeunload', function(userfardedthesite){
   xhttp.onreadystatechange = function() {

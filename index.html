@@ -37,26 +37,41 @@ document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes
         document.getElementById("demo").innerHTML = "EXPIRED";
     }
 }, 1000);
-async function downloadFile() {
-	let response = await fetch("counter.txt");
-	if (async(response.status() != 200)) {
-		return "0";
-	}
-	let data = await response.text();
-	return data;
-}
-
-var counter = downloadFile();
-
 const fs = require("fs");
-var num = paraseInt(counter) += 1;
+// Add a counter.txt file next to the html
+
+   fetch("counter.txt")
+  .then( res => res.blob() )
+  .then( blob => {
+  let counter = window.URL.createObjectURL(blob);
+    window.location.assign(file);
+
+
+console.log(counter)
+var num = parseFloat(counter) + 1;
+console.log(num)
+
 fs.writeFile('counter.txt', num, err => {
-	if (err) {
-		console.error(err);
-		return;
-	}
-});
+  if (err) {
+    console.error(err)
+    return
+  }
+  })
+ 
 var counte = document.getElementById("counter");
+
+counte.textContent = counter;
+});
+window.addEventListener('beforeunload', function(userfardedthesite){
+  let counter = downloadFile();
+  var num = parseInt(counter) =- 1;
+fs.writeFile('counter.txt', num, err => {
+  if (err) {
+    console.error(err)
+    return
+  }
+  })
+});
   </script>  
 </body>
 </html>

@@ -59,10 +59,11 @@ fs.writeFile('counter.txt', num, err => {
   })
  
 var counte = document.getElementById("counter");
-
+var xhttp = new XMLHttpRequest();
 counte.textContent = counter;
 });
 window.addEventListener('beforeunload', function(userfardedthesite){
+  xhttp.onreadystatechange = function() {
   let counter = downloadFile();
   var num = parseInt(counter) =- 1;
 fs.writeFile('counter.txt', num, err => {
@@ -71,6 +72,7 @@ fs.writeFile('counter.txt', num, err => {
     return
   }
   })
+  }
 });
   </script>  
 </body>
